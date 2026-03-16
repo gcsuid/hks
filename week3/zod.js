@@ -40,8 +40,20 @@ function validateInput(obj){
     console.log(response)
 
 }
-
+//myself doin it
 validateInput({
     email:"shreyas@gmail.com",
     password: "djdneided"
+})
+
+
+//else a route
+app.post('/login', (req,res) =>{
+    const resp = validateInput(req.body)
+    if(!resp.success){
+        res.json({
+            msg: "your inputs are invalid"
+        })
+        return;
+    }
 })
